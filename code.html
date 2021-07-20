@@ -5,12 +5,37 @@
 	<script>
 		$(function(){
 			$("body").css("background-color", "lightblue");
+			var msg = $("#msg");
+			var chkBtn = $("#chkBtn");
+			var currentQuestion = 1;
 			
-			$("#chk").on("click", function(){
-				if($("#answer").val() != "042"){
-					$("#msg").append("nope, try again<br>");
-				} else {
-					$("#msg").html("You got it!");
+			function countDelay(seconds){
+				chkBtn.prop("disabled", true);
+				timeRemaining = seconds;
+				interv = setInterval(function(){
+					//for(i=0; i<seconds; i++){
+							chkBtn.val("Try again in "+timeRemaining+" seconds");
+							timeRemaining -= 1;
+					//}
+					if(timeRemaining == 0){
+						clearInterval(interv);
+						chkBtn.val("Check Answer");
+						chkBtn.prop("disabled", false);
+					}
+				}, 1000);
+				
+				
+			}
+			
+			chkBtn.on("click", function(){
+				
+				switch(true){
+					case $("#answer").val() == "042" && currentQuestion == 1: 
+						msg.html("You got it!");
+						break;
+					default : 
+						msg.append("nope, try again<br>");
+						countDelay(5);
 				}
 			});
 		
@@ -22,7 +47,7 @@
 	<img src="images/code.png"/>
 	<form>
 		Answer: <input type="text" id="answer"/>
-		<input type="button" value="Check Answer" id="chk">
+		<input type="button" value="Check Answer" id="chkBtn">
 		<div id="msg"></div>
 	</form>
 </body>
