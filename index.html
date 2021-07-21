@@ -1,0 +1,380 @@
+<html>
+<head>
+	<title>Tom loves Scharese</title>
+	 <meta name="viewport" content="width=device-width, initial-scale=1">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+	
+	<script>
+	var qArray = [
+		["What color where Grandma Petersons shirt stripes when she first held Joseph?",
+		"red",
+		"<img src='images/JNGMA.jpg' width='100%'/>"
+		],
+		["What number was on Joseph's hoodie when we visited the Oregon coast for Christmas with your dad?",
+		"80",
+		"<img src='images/Coast.jpg' width='100%'/>"
+		],
+		["What time was showing on the clock when we were first able to take Emily home from the hospital?",
+		"1:11",
+		"<img src='images/WMOMGO.jpg' width='100%'/>"
+		],
+		["Who played the role of Mrs. White at our first Clue night in 2004?",
+		"chris bushman",
+		"<img src='images/group2.jpg' width='100%'/>"
+		],
+		["What weapon did you almost kill me with at our first Clue night in 2004?",
+		"knife",
+		"<img src='images/clue1.jpg' width='100%'/>"
+		],
+		["What animal did Emily become in the 2004 test of Sony camera video?",
+		"turtle",
+		'<iframe width="560" height="315" src="https://www.youtube.com/embed/Cjkfgoo-OJA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
+		],
+		["What year did you start shooting weddings for Kevin's Photography?",
+		"2005",
+		"<img src='images/kp.jpg' width='100%'/>"
+		],
+		["What color were Joseph's sleeves on his first day of preschool?",
+		"orange",
+		"<img src='images/jpreschool.jpg' width='100%'/>"
+		],
+		["What character was on Emily's shirt when she ran the bases at the Isotopes baseball game?",
+		"snoopy",
+		"<img src='images/bball.jpg' width='100%'/>"
+		],
+		["What color was your Dad's shirt when he first held newborn Eva?",
+		"white",
+		"<img src='images/dadneva.jpg' width='100%'/>"
+		],
+		["What did Emily dress up as for Haloween the year Eva was born?",
+		"snow white",
+		"<img src='images/EmilyWhite.jpg' width='100%'/>"
+		],
+		["What was embroidered on Eva's blanket that Christmas that our house flooded?",
+		"piglet",
+		"<img src='images/flood.jpg' width='100%'/>"
+		],
+		["What character was on Emily's jacket when Eva got her first taste of snow?",
+		"hello kitty",
+		"<img src='images/EvaSnow.jpg' width='100%'/>"
+		],
+		["How many items of footwear was our family wearing when we left Explora in 2006?",
+		"7",
+		"<img src='images/explora.jpg' width='100%'/>"
+		],
+		["How many buttons were on your shirt at Joseph's first soccer game?",
+		"4",
+		"<img src='images/soccer.jpg' width='100%'/>"
+		],
+		["What was on your sweater at my family's 2006 Thanksgiving get-together?",
+		"snowflake",
+		"<img src='images/thanks.jpg' width='100%'/>"
+		],
+		["What treat did the kids use their tickets on at our first family fair?",
+		"fun dip",
+		"<img src='images/famfair.jpg' width='100%'/>"
+		],
+		["How many were in our group when we went to the dinosaur museum in 2007?",
+		"17",
+		"<img src='images/dino.jpg' width='100%'/>"
+		],
+		["How many teeth was Joseph missing when we visited Circus Circus?",
+		"2",
+		"<img src='images/circus.jpg' width='100%'/>"
+		],
+		["What was the first word on Eva's shirt when we went camping in August of 2007?",
+		"venezia",
+		"<img src='images/camping.jpg' width='100%'/>"
+		],
+		["How many tickets did a My Little Pony cost at our first family fair in the Marlborough house?",
+		"25",
+		"<img src='images/famfair2.jpg' width='100%'/>"
+		],
+		["What color was Joseph's shirt when we visited the Aquarium and Botanical Gardens in 2007?",
+		"yellow",
+		"<img src='images/gardens.jpg' width='100%'/>"
+		],
+		["What brand of water bottles did we have when we went to White Sands?",
+		"ozarka",
+		"<img src='images/whitesands.jpg' width='100%'/>"
+		],
+		["What color were our leis when we went to a luau in Hawaii?",
+		"purple",
+		"<img src='images/luau.jpg' width='100%'/>"
+		],
+		["What did your shirt say when we went boating with Shara and Jason in Colorado in 2009?",
+		"hawaii",
+		"<img src='images/colorado.jpg' width='100%'/>"
+		],
+		["What did the cake say at Joseph's baptism?",
+		"i am a child of god",
+		"<img src='images/jbaptism.jpg' width='100%'/>"
+		],
+		["What was on Eva's shirt when she first met newborn Joshua?",
+		"heart",
+		"<img src='images/jobirth.jpg' width='100%'/>"
+		],
+		["What color did the girls wear on Joshua's first 4th of July?",
+		"red",
+		"<img src='images/jo4th.jpg' width='100%'/>"
+		],
+		["Which non-family-member went with us on Joshua's first campout?",
+		"kaitlyn",
+		"<img src='images/kaitlyn.jpg' width='100%'/>"
+		],
+		["What animal was on Eva's shirt when she first went to La Petite?",
+		"bird",
+		"<img src='images/lapetite.jpg' width='100%'/>"
+		],
+		["What color did Tambri wear at Emily's baptism?",
+		"purple",
+		"<img src='images/embaptism.jpg' width='100%'/>"
+		],
+		["Who tried to cut their own hair shortly before Emily's baptism? (shortly, get it?) ",
+		"tom",
+		"<img src='images/tom.jpg' width='100%'/>"
+		],
+		["What did Joshua dress up as for his first Halloween?",
+		"zebra",
+		"<img src='images/johalloween.jpg' width='100%'/>"
+		],
+		["What did Joshua's pajamas say on his 1st Christmas?",
+		"my 1st christmas",
+		"<img src='images/jo1stchristmas.jpg' width='100%'/>"
+		],
+		["What Kim's crown say at her 50th birthday party?",
+		"birthday girl",
+		"<img src='images/kim.jpg' width='100%'/>"
+		],
+		["What career did Eva choose for her presentation in Kindergarten?",
+		"veterinarian",
+		"<img src='images/EvaVet.jpg' width='100%'/>"
+		],
+		["What is the name of the boat in front of the Tillamook Cheese factory?",
+		"morning star",
+		"<img src='images/tillamook.jpg' width='100%'/>"
+		],
+		["What brand of camera did your Dad take on our Lewis and Clark adventures?",
+		"olympus",
+		"<img src='images/lewisandclark.jpg' width='100%'/>"
+		],
+		["Who wore flip-flops and mittens to Meteor Crater?",
+		"eva",
+		"<img src='images/meteor.jpg' width='100%'/>"
+		],
+		["What kind of treat did we have for Joshua's first time bowling?",
+		"icee",
+		"<img src='images/JoshuaIcee.jpg'  width='100%'/>"
+		],
+		["What word is at the 1:03 mark in your 2013 Mother's Day song (Found on the Learnswell Youtube channel)?",
+		"miraculously",
+		'<iframe width="560" height="315" src="https://www.youtube.com/embed/bkRNM2xSxco" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
+		],
+		["What color shirt did you wear at Wilson Arch on our way to Rachel and Jordan Batschi's wedding reception in Utah?",
+		"pink",
+		"<img src='images/ScharesePink.jpg'  width='100%'/>"
+		],
+		["Which non-family-member went with us to check out our first Utah house after our offer was accepted?",
+		"grace",
+		"<img src='images/KidsAtHouse.jpg'  width='100%'/>"
+		],
+		["What did Emily have painted on her face at Winterpalooza?",
+		"hearts",
+		"<img src='images/Winterpalooza.jpg'  width='100%'/>"
+		],
+		["What character was on Eva's shirt when we went to a Utah Blaze football game?",
+		"tinkerbell",
+		"<img src='images/Blaze.jpg'  width='100%'/>"
+		],
+		["What did the cake say at Eva's baptism?",
+		"ctr",
+		"<img src='images/Baptism.jpg'  width='100%'/>"
+		],
+		["On what date did I first draw individual portraits of the kids?",
+		"11/6/2013",
+		"11/6/2013<img src='images/Portraits.jpg'  width='100%'/>"
+		],
+		["What did Joseph's sweatshirt say when we visited the Hill Air Force Museum?",
+		"philadelphia eagles",
+		"<img src='images/Hill.jpg'  width='100%'/>"
+		],
+		["What did Emily's sweatshirt say at our second Atria egg hunt?",
+		"carlos rey elementary",
+		"<img src='images/Atria.jpg'  width='100%'/>"
+		],
+		["Who fell asleep on the computer the same day that fudge exploded?",
+		"joshua",
+		"<img src='images/josleep.jpg'  width='100%'/>"
+		],
+		["What color was Emily's shirt for the 2016 Krispy Kreme pirate day?",
+		"pink",
+		"<img src='images/kk.jpg'  width='100%'/>"
+		],
+		["Who played Miss Scarlet at Emily's Clue birthday party?",
+		"emily",
+		"<img src='images/emclue.jpg'  width='100%'/>"
+		],
+		["What color was the train car we rode in at the 7 Peaks North Pole?",
+		"red",
+		"<img src='images/train.jpg'  width='100%'/>"
+		],
+		["How many people were in on the 2016 New Years Eve toast?",
+		"6",
+		"<img src='images/nye2016.jpg'  width='100%'/>"
+		],
+		["What logo is on Emily's shirt at the 2017 Easter egg hunt at Legacy?",
+		"flash",
+		"<img src='images/easterLegacy.jpg'  width='100%'/>"
+		],
+		["Where did we eat out on June 29 2017?",
+		"applebees",
+		"<img src='images/applebees.jpg'  width='100%'/>"
+		],
+		["What did the exchange student use as a pillow after visiting the planetarium?",
+		"joseph",
+		"<img src='images/pillow.jpg'  width='100%'/>"
+		],
+		["What number was on Eva's shirt when we visited museums and hiked Ensign Peak with the exchange students?",
+		"22",
+		"<img src='images/ensign.jpg'  width='100%'/>"
+		],
+		["What did Jordon's shirt say when we did the pirate escape room?",
+		"the goonies never say die",
+		"<img src='images/escape.jpg'  width='100%'/>"
+		],
+		["How many family members were wearing ties at Joshua's baptism?",
+		"4",
+		"<img src='images/jobaptism.jpg'  width='100%'/>"
+		],
+		["What word was on Eva's shirt when we went to Frightmares in 2018?",
+		"peace",
+		"<img src='images/frightmares.jpg'  width='100%'/>"
+		],
+		["What color sweatshirts did we wear on Christmas 2018?",
+		"black",
+		"<img src='images/christmas2018.jpg'  width='100%'/>"
+		],
+		["What did Joseph's shirt say when we visited the Kirtland Temple?",
+		"new york",
+		"<img src='images/kirtland.jpg'  width='100%'/>"
+		],
+		["What did Eva's hat say when we nearly got eaten alive by mosquitos?",
+		"swim",
+		"<img src='images/mosquitos.jpg'  width='100%'/>"
+		],
+		["On what date did you visit the Tower Bridge?",
+		"8/26/2019",
+		"8/26/2019<img src='images/tower.jpg'  width='100%'/>"
+		],
+		
+		["You've made it through to the end!!  I love you and all the wonderful memories that we've made!",
+		"Thank You!!!",
+		"<img src='images/christmas2018.jpg'  width='100%'/>"
+		]
+	];
+	
+	
+		$(function(){
+			$("body").css("background-color", "lightblue");
+			var msg = $("#msg");
+			var chkBtn = $("#chkBtn");
+			if(document.cookie){
+				var currentQuestion = document.cookie;
+			} else {
+				var currentQuestion = 1;
+			}
+			var timesWrong = 1;
+			
+			function updateCookie(){
+				document.cookie = currentQuestion;
+			}
+			
+			function countDelay(seconds){
+				chkBtn.prop("disabled", true);
+				timeRemaining = seconds;
+				interv = setInterval(function(){
+					//for(i=0; i<seconds; i++){
+							chkBtn.val("Try again in "+timeRemaining+" seconds");
+							timeRemaining -= 1;
+					//}
+					if(timeRemaining == 0){
+						clearInterval(interv);
+						chkBtn.val("Check Answer");
+						chkBtn.prop("disabled", false);
+					}
+				}, 1000);
+				
+				
+			}
+			
+			function updateQuestion(){
+				$("#q").html(qArray[currentQuestion-1][0]);
+			};
+			function updateMsg(){
+				$("#msg").html(qArray[currentQuestion-1][2]);
+			};
+			
+			updateQuestion();
+			
+			$("#help").on("click", function(){
+				updateMsg();
+			});
+			
+			$("#giveUp").on("click", function(){
+				$("#answer").val(qArray[currentQuestion-1][1]);
+			});
+			
+			$("#theForm").submit(function(e) {
+				e.preventDefault();
+			});
+			
+			chkBtn.on("click", function(){
+				
+				switch(true){
+					case $("#answer").val().toLowerCase() == qArray[currentQuestion-1][1]: 
+						msg.html("You got it!");
+						timesWrong = 1;
+						updateMsg();
+						currentQuestion++;
+						updateCookie();
+						updateQuestion();
+						$("#answer").val("");
+						break;
+					default : 
+						msg.prepend("nope, try again<br>");
+						countDelay(timesWrong*5);
+						$("#answer").val("");
+						timesWrong++;
+				}
+			});
+		
+		});
+	</script>
+</head>
+
+<body>
+
+<div class="container-fluid" style="font-size: large">
+	<h1 align="center">21 years of joy and tears</h1>
+	<div id="q" align="center" style="  border: 1px solid;
+	background: white;
+	width: 80%;
+	font-size: large;
+	margin-left: 10%;
+  padding: 10px;
+  box-shadow: 5px 10px 8px #888888;"><img src="images/code.png" style='width: 100%; object-fit: contain'/>
+	</div>
+	<p>
+	<form id="theForm">
+		<div align="center">
+			Answer: <input type="text" id="answer"/>
+			<br><input type="submit" value="Check Answer" id="chkBtn"/>
+			<input type="button" value="Help" id="help"/>
+			<input type="button" value="I give up" id="giveUp"/>
+		</div>
+	</form>
+	</p>
+	<div id="msg"></div>
+</div>
+</body>
+</html>
