@@ -8,15 +8,15 @@
 	var qArray = [
 		["What color where Grandma Petersons shirt stripes when she first held Joseph?",
 		"red",
-		"<img src='images/JNGMA.JPG' width='100%'/>"
+		"<img src='images/jngma.jpg' width='100%'/>"
 		],
 		["What number was on Joseph's hoodie when we visited the Oregon coast for Christmas with your dad?",
 		"80",
-		"<img src='images/Coast.jpg' width='100%'/>"
+		"<img src='images/coast.jpg' width='100%'/>"
 		],
 		["What time was showing on the clock when we were first able to take Emily home from the hospital?",
 		"1:11",
-		"<img src='images/WMOMGO.jpg' width='100%'/>"
+		"<img src='images/wmomgo.jpg' width='100%'/>"
 		],
 		["Who played the role of Mrs. White at our first Clue night in 2004?",
 		"chris bushman",
@@ -48,7 +48,7 @@
 		],
 		["What did Emily dress up as for Haloween the year Eva was born?",
 		"snow white",
-		"<img src='images/EmilyWhite.jpg' width='100%'/>"
+		"<img src='images/emilywhite.jpg' width='100%'/>"
 		],
 		["What was embroidered on Eva's blanket that Christmas that our house flooded?",
 		"piglet",
@@ -56,7 +56,7 @@
 		],
 		["What character was on Emily's jacket when Eva got her first taste of snow?",
 		"hello kitty",
-		"<img src='images/EvaSnow.jpg' width='100%'/>"
+		"<img src='images/evasnow.jpg' width='100%'/>"
 		],
 		["How many items of footwear was our family wearing when we left Explora in 2006?",
 		"7",
@@ -148,7 +148,7 @@
 		],
 		["What career did Eva choose for her presentation in Kindergarten?",
 		"veterinarian",
-		"<img src='images/EvaVet.jpg' width='100%'/>"
+		"<img src='images/evavet.jpg' width='100%'/>"
 		],
 		["What is the name of the boat in front of the Tillamook Cheese factory?",
 		"morning star",
@@ -164,7 +164,7 @@
 		],
 		["What kind of treat did we have for Joshua's first time bowling?",
 		"icee",
-		"<img src='images/JoshuaIcee.jpg'  width='100%'/>"
+		"<img src='images/joshuaicee.jpg'  width='100%'/>"
 		],
 		["What word is at the 1:03 mark in your 2013 Mother's Day song (Found on the Learnswell Youtube channel)?",
 		"miraculously",
@@ -172,35 +172,35 @@
 		],
 		["What color shirt did you wear at Wilson Arch on our way to Rachel and Jordan Batschi's wedding reception in Utah?",
 		"pink",
-		"<img src='images/ScharesePink.jpg'  width='100%'/>"
+		"<img src='images/scharesepink.jpg'  width='100%'/>"
 		],
 		["Which non-family-member went with us to check out our first Utah house after our offer was accepted?",
 		"grace",
-		"<img src='images/KidsAtHouse.jpg'  width='100%'/>"
+		"<img src='images/kidsathouse.jpg'  width='100%'/>"
 		],
 		["What did Emily have painted on her face at Winterpalooza?",
 		"hearts",
-		"<img src='images/Winterpalooza.jpg'  width='100%'/>"
+		"<img src='images/winterpalooza.jpg'  width='100%'/>"
 		],
 		["What character was on Eva's shirt when we went to a Utah Blaze football game?",
 		"tinkerbell",
-		"<img src='images/Blaze.jpg'  width='100%'/>"
+		"<img src='images/blaze.jpg'  width='100%'/>"
 		],
 		["What did the cake say at Eva's baptism?",
 		"ctr",
-		"<img src='images/Baptism.jpg'  width='100%'/>"
+		"<img src='images/baptism.jpg'  width='100%'/>"
 		],
 		["On what date did I first draw individual portraits of the kids?",
 		"11/6/2013",
-		"11/6/2013<img src='images/Portraits.jpg'  width='100%'/>"
+		"11/6/2013<img src='images/portraits.jpg'  width='100%'/>"
 		],
 		["What did Joseph's sweatshirt say when we visited the Hill Air Force Museum?",
 		"philadelphia eagles",
-		"<img src='images/Hill.jpg'  width='100%'/>"
+		"<img src='images/hill.jpg'  width='100%'/>"
 		],
 		["What did Emily's sweatshirt say at our second Atria egg hunt?",
 		"carlos rey elementary",
-		"<img src='images/Atria.jpg'  width='100%'/>"
+		"<img src='images/atria.jpg'  width='100%'/>"
 		],
 		["Who fell asleep on the computer the same day that fudge exploded?",
 		"joshua",
@@ -224,7 +224,7 @@
 		],
 		["What logo is on Emily's shirt at the 2017 Easter egg hunt at Legacy?",
 		"flash",
-		"<img src='images/easterLegacy.jpg'  width='100%'/>"
+		"<img src='images/easterlegacy.jpg'  width='100%'/>"
 		],
 		["Where did we eat out on June 29 2017?",
 		"applebees",
@@ -275,6 +275,7 @@
 	
 	
 		$(function(){
+		
 			$("body").css("background-color", "lightblue");
 			$("#result").hide();
 			var msg = $("#msg");
@@ -313,6 +314,7 @@
 				$("#q").html(currentQuestion+". "+qArray[currentQuestion-1][0]);
 			};
 			function updateMsg(){
+				if(
 				$("#msg").html(qArray[currentQuestion-1][2].toLowerCase());
 			};
 			
@@ -390,7 +392,7 @@
 	<div id="result" align="center" style="font-size: xx-large; color: yellow;">
 		YOU GOT IT!!
 	</div>
-	<div id="msg"></div>
+	<div id="msg" align="center" style="background-color: yellow;">READ THIS: The goal of this quiz is to get us to look back through old photos to answer 64 questions, so break out your external harddrives and let's have some FUN!</div>
 </div>
 </body>
 </html>
