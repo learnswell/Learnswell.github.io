@@ -331,8 +331,10 @@
 			});
 			
 			$("#goback").on("click", function(){
-				currentQuestion--;
-				updateQuestion();
+				if(currentQuestion>1){
+					currentQuestion--;
+					updateQuestion();
+				}
 			});
 			
 			chkBtn.on("click", function(){
