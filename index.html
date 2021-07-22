@@ -276,6 +276,7 @@
 	
 		$(function(){
 			$("body").css("background-color", "lightblue");
+			$("#result").hide();
 			var msg = $("#msg");
 			var chkBtn = $("#chkBtn");
 			if(document.cookie){
@@ -308,10 +309,11 @@
 			}
 			
 			function updateQuestion(){
-				$("#q").html(qArray[currentQuestion-1][0]);
+				
+				$("#q").html(currentQuestion+". "+qArray[currentQuestion-1][0]);
 			};
 			function updateMsg(){
-				$("#msg").html(qArray[currentQuestion-1][2]);
+				$("#msg").html(qArray[currentQuestion-1][2].toLowerCase());
 			};
 			
 			updateQuestion();
@@ -328,11 +330,17 @@
 				e.preventDefault();
 			});
 			
+			$("#goback").on("click", function(){
+				currentQuestion--;
+				updateQuestion();
+			});
+			
 			chkBtn.on("click", function(){
 				
 				switch(true){
 					case $("#answer").val().toLowerCase() == qArray[currentQuestion-1][1]: 
-						msg.html("You got it!");
+						$("#result").fadeIn(200);
+						$("#result").fadeOut(2000);
 						timesWrong = 1;
 						updateMsg();
 						currentQuestion++;
@@ -355,11 +363,11 @@
 <body>
 
 <div class="container-fluid" style="font-size: large">
-	<h1 align="center">21 years of joy and tears</h1>
+	<h1 align="center" style="background-color: darkblue; color: white;">21 Years of Joy and Tears</h1>
 	<div id="q" align="center" style="  border: 1px solid;
 	background: white;
 	width: 80%;
-	font-size: large;
+	font-size: xx-large;
 	margin-left: 10%;
 	padding: 10px;
 	box-shadow: 5px 10px 8px #888888;">
@@ -367,14 +375,19 @@
 	</div>
 	<p>
 	<form id="theForm">
-		<div align="center">
-			Answer: <input type="text" id="answer"/>
-			<br><input type="submit" value="Check Answer" id="chkBtn"/>
-			<input type="button" value="Help" id="help"/>
-			<input type="button" value="I give up" id="giveUp"/>
+		<div align="center" style="font-size: x-large;">
+			Answer: <input type="text" id="answer" style="font-size: x-large; margin-bottom: 5px; border-radius: 4px; padding: 10px 24px;"/>
+			<input type="submit" value="Check Answer" id="chkBtn" style="font-size: x-large; border-radius: 4px; padding: 10px 24px;"/>
+			<br>
+			<input type="button" value="< Go back" id="goback" style="font-size: x-large; border-radius: 4px; padding: 10px 24px;"/>
+			<input type="button" value="Help" id="help" style="font-size: x-large; border-radius: 4px; padding: 10px 24px;"/>
+			<input type="button" value="I give up" id="giveUp" style="font-size: x-large; border-radius: 4px; padding: 10px 24px;"/>
 		</div>
 	</form>
 	</p>
+	<div id="result" align="center" style="font-size: xx-large; color: yellow;">
+		YOU GOT IT!!
+	</div>
 	<div id="msg"></div>
 </div>
 </body>
