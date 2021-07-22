@@ -314,8 +314,7 @@
 				$("#q").html(currentQuestion+". "+qArray[currentQuestion-1][0]);
 			};
 			function updateMsg(){
-				if(
-				$("#msg").html(qArray[currentQuestion-1][2].toLowerCase());
+				$("#msg").html(qArray[currentQuestion-1][2]);
 			};
 			
 			updateQuestion();
@@ -389,7 +388,7 @@
 		</div>
 	</form>
 	</p>
-	<div id="result" align="center" style="font-size: xx-large; color: yellow;">
+	<div id="result" align="center" style="font-size: xx-large; color: yellow; background-color: darkblue; display: none;">
 		YOU GOT IT!!
 	</div>
 	<div id="msg" align="center" style="background-color: yellow;">READ THIS: The goal of this quiz is to get us to look back through old photos to answer 64 questions, so break out your external harddrives and let's have some FUN!</div>
