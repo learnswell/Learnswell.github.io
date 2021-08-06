@@ -1,0 +1,196 @@
+<html>
+<head>
+	<title>Tom Loves Scharese</title>
+	 <meta name="viewport" content="width=device-width, initial-scale=1">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+	
+	<script>
+	var qArray = [
+		["Go find the movie with the best music. Spectacular special features including __________",
+		"sing along",
+		""
+		],
+		["Reading tells us of heaven when its everey 5th lotter used",
+		"i love you",
+		""
+		],
+		["What is the last book on the corner shelf?",
+		"kingdoms and conquerors",
+		""
+		],
+		["What body part comes to mind when you look at Emily's phone?",
+		"tongue",
+		""
+		],
+		["What is on the mouth of Joseph's phone?",
+		"bamboo",
+		""
+		],
+		["What is the last word on the handle of a broken appliance?",
+		"tank",
+		'<iframe width="560" height="315" src="https://www.youtube.com/embed/Cjkfgoo-OJA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
+		],
+		["How many times did Eva block Hunter?",
+		"4",
+		""
+		],
+		["What number is Eva?",
+		"14",
+		""
+		],
+		["What is the password number for Joshua's phone?",
+		"1023",
+		""
+		],
+		["How many push pins are on the top row of the Plinko board?",
+		"10",
+		""
+		],
+		['To claim your reward, go find what color Joshua was wearing when he said "I Love You Mom"',
+		"purple",
+		"<h1>You did it!!!  I Love you like crazy!  Thanks for playing along!</h1>"
+		]
+	];
+	
+	
+		$(function(){
+		
+			$("body").css("background-color", "lightblue");
+			$("#result").hide();
+			var msg = $("#msg");
+			var chkBtn = $("#chkBtn");
+			if(document.cookie){
+				var currentQuestion = document.cookie;
+			} else {
+				var currentQuestion = 1;
+			}
+			var timesWrong = 1;
+			var currentPoints = 0;
+			var pointsEarned = 1;
+			
+			function updateCookie(){
+				document.cookie = currentQuestion;
+			}
+			
+			function countDelay(seconds){
+				chkBtn.prop("disabled", true);
+				timeRemaining = seconds;
+				interv = setInterval(function(){
+					//for(i=0; i<seconds; i++){
+							chkBtn.val("Try again in "+timeRemaining+" seconds");
+							timeRemaining -= 1;
+					//}
+					if(timeRemaining == 0){
+						clearInterval(interv);
+						chkBtn.val("Check Answer");
+						chkBtn.prop("disabled", false);
+					}
+				}, 1000);
+				
+				
+			}
+			var helpcounter = 1;
+			function updateQuestion(){
+				helpcounter = 1;
+				$("#q").html(currentQuestion+". "+qArray[currentQuestion-1][0]);
+			};
+			function updateMsg(){
+				$("#msg").html(qArray[currentQuestion-1][2]);
+			};
+			
+			function updateScore(){
+				$("#score").html("<br>Current Points: "+currentPoints+"<br>Points Possible: "+(currentQuestion-1)+"<br>Current Grade: "+((currentPoints/(currentQuestion-1))*100).toFixed(2)+"%");
+			}
+			
+			updateQuestion();
+			
+			$("#help").on("click", function(){
+				//updateMsg();
+				$("#answer").val(qArray[currentQuestion-1][1].substring(0,helpcounter))
+				helpcounter++;
+				pointsEarned = .5;
+			});
+			
+			$("#giveUp").on("click", function(){
+				$("#answer").val(qArray[currentQuestion-1][1]);
+				pointsEarned = 0;
+			});
+			
+			$("#theForm").submit(function(e) {
+				e.preventDefault();
+			});
+			
+			$("#goback").on("click", function(){
+				if(currentQuestion>1){
+					currentQuestion--;
+					if(currentPoints > .5){
+						currentPoints-=1;
+					} else {
+						currentPoints = 0;
+					}
+					updateQuestion();
+					updateScore();
+				}
+			});
+			
+			chkBtn.on("click", function(){
+				
+				switch(true){
+					case $("#answer").val().toLowerCase() == qArray[currentQuestion-1][1]: 
+						$("#result").fadeIn(200);
+						$("#result").fadeOut(2000);
+						timesWrong = 1;
+						updateMsg();
+						currentQuestion++;
+						updateCookie();
+						updateQuestion();
+						$("#answer").val("");
+						currentPoints += pointsEarned;
+						updateScore();
+						pointsEarned = 1;
+						break;
+					default : 
+						msg.prepend("nope, try again<br>");
+						countDelay(timesWrong*5);
+						$("#answer").val("");
+						timesWrong++;
+				}
+			});
+		
+		});
+	</script>
+</head>
+
+<body>
+
+<div class="container-fluid" style="font-size: large">
+	<h2 align="center" style="background-color: darkblue; color: white;">Scavenger Hunt to celebrate August 5th</h1>
+	<div id="q" align="center" style="  border: 1px solid;
+	background: white;
+	width: 80%;
+	font-size: x-large;
+	margin-left: 10%;
+	padding: 10px;
+	box-shadow: 5px 10px 8px #888888;">
+		-- Question --
+	</div>
+	<p>
+	<form id="theForm">
+		<div align="center" style="font-size: large;">
+			Answer: <input type="text" id="answer" style="font-size: large; margin-bottom: 5px; border-radius: 4px; padding: 10px 24px;"/>
+			<input type="submit" value="Check Answer" id="chkBtn" style="font-size: large; border-radius: 4px; padding: 10px 24px;"/>
+			<br>
+			<input type="button" value="< Go back" id="goback" style="font-size: large; border-radius: 4px; padding: 10px 24px;"/>
+			<input type="button" value="Help" id="help" style="font-size: large; border-radius: 4px; padding: 10px 24px;"/>
+			<input type="button" value="I give up" id="giveUp" style="font-size: large; border-radius: 4px; padding: 10px 24px;"/>
+		</div>
+	</form>
+	</p>
+	<div id="result" align="center" style="font-size: xx-large; color: white; background-color: darkblue; display: none;">
+		YOU GOT IT!!
+	</div>
+	<div id="msg" align="center" style="background-color: yellow;">Work your way through to earn a prize</div>
+	<div id="score" align="center"><b>Scoring:</b><br>correct answer is 1 point<br>answer with help is .5 points<br>giving up is 0 points<br>going back is -1 points</div>
+</div>
+</body>
+</html>
