@@ -370,7 +370,8 @@
 						break;
 					default : 
 						msg.prepend("nope, try again<br>");
-						countDelay(timesWrong*5);
+						//countDelay(timesWrong*5);
+						countDelay(1)
 						$("#answer").val("");
 						timesWrong++;
 				}
